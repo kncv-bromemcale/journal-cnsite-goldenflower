@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>了解MK体育 – 运动生活从这里展开</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f5f7;
+            color: #1e1e1e;
+            line-height: 1.6;
+        }
+
+        /* 深色头图 */
+        .hero {
+            background: linear-gradient(145deg, #0a0e1a 0%, #1b2238 100%);
+            color: #eaeef2;
+            padding: 4rem 1.5rem 3.2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -2rem;
+            left: 0;
+            width: 100%;
+            height: 4rem;
+            background: #f4f5f7;
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        .hero a {
+            display: inline-block;
+            background: #f97316;
+            color: #0a0e1a;
+            padding: 0.7rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 8px 18px rgba(249, 115, 22, 0.25);
+        }
+
+        .hero a:hover {
+            background: #fb923c;
+            transform: translateY(-2px);
+        }
+
+        /* 浅色主内容区 */
+        .container {
+            max-width: 1000px;
+            margin: -1rem auto 0;
+            padding: 0 1.8rem 3.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            border-left: 5px solid #f97316;
+            padding-left: 1rem;
+            margin: 2.8rem 0 1.4rem 0;
+            color: #1e293b;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.8rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 1.2rem;
+            padding: 1.6rem 1.4rem;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+        }
+
+        .card p {
+            color: #334155;
+            font-size: 0.95rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin: 1.2rem 0 0.6rem;
+        }
+
+        .highlight-list li {
+            padding: 0.4rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .highlight-list li::before {
+            content: "⚡";
+            color: #f97316;
+            font-weight: bold;
+            display: inline-block;
+            width: 1.2rem;
+        }
+
+        .inline-link {
+            color: #d97706;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            font-weight: 500;
+            transition: color 0.15s;
+        }
+
+        .inline-link:hover {
+            color: #b45309;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border-radius: 1rem;
+            padding: 1.2rem 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #1e293b;
+        }
+
+        .faq-item p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .tagline {
+            background: #e9edf2;
+            border-radius: 2rem;
+            padding: 1.4rem 2rem;
+            margin: 2.5rem 0 0.5rem;
+            font-size: 1rem;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .container {
+                padding: 0 1.2rem 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero {
+                padding: 3rem 1rem 2.5rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图区域 -->
+    <section class="hero">
+        <h1>运动 · 日常 · 节奏</h1>
+        <p>从球场到生活，找到属于你的动感支点。不刻意，但保持投入。</p>
+        <a href="https://wapsite-mksports.com">MK体育</a>
+    </section>
+
+    <!-- 浅色正文区 -->
+    <div class="container">
+
+        <!-- 摘要 / 品牌印象 -->
+        <h2 class="section-title">不只是运动，也是一种日常秩序</h2>
+        <p style="margin-bottom: 0.2rem; font-size: 1.02rem;">
+            <a href="https://wapsite-mksports.com" class="inline-link">MK体育</a> 所关注的，是那些与身体对话的时刻——无论是清晨的慢跑、周末的球局，还是下班后的一节拉伸。运动从来不是别人的叙事，而是你对自己节奏的尊重。这个平台把视角放在了真实参与上，不做夸张渲染，只提供清晰的信息和选择。
+        </p>
+
+        <!-- 产品亮点卡片 -->
+        <div class="card-grid">
+            <div class="card">
+                <h3>⚙️ 信息简洁，直抵核心</h3>
+                <p>没有冗余弹窗或复杂分类。页面围绕体育项目、活动动态和基础指引展开，让你快速找到感兴趣的板块。</p>
+            </div>
+            <div class="card">
+                <h3>📱 适配多设备，随时可用</h3>
+                <p>无论用手机快速浏览，还是在电脑上深入查阅，界面都保持清爽。响应式布局让体验不中断。</p>
+            </div>
+            <div class="card">
+                <h3>🧭 场景化引导，不迷路</h3>
+                <p>从新手到爱好者，都能找到适合自己的路径。内容按实际场景组织，而不是机械的菜单堆叠。</p>
+            </div>
+            <div class="card">
+                <h3>🌱 克制但专业，拒绝浮夸</h3>
+                <p>所有信息都建立在可验证的基础上。没有夸张的承诺，只有对运动和参与者真实的尊重。</p>
+            </div>
+        </div>
+
+        <!-- 使用建议 / 场景 -->
+        <h2 class="section-title">什么情况下可以打开它？</h2>
+        <ul class="highlight-list">
+            <li>想了解近期有什么体育动态或活动安排 —— 先浏览首页概况，再深入感兴趣的条目。</li>
+            <li>寻找一个干净、不打扰的运动信息页面 —— 这里的结构直接，没有自动播放或诱导点击。</li>
+            <li>日常运动前后，用来获取一点灵感或规划 —— 适合当作轻量参考，而不是另一个信息负担。</li>
+            <li>推荐给身边刚开始接触运动的朋友 —— 界面友好，不会让人感到压力或困惑。</li>
+        </ul>
+
+        <!-- FAQ 摘要 -->
+        <h2 class="section-title">常见想法 · 简短回应</h2>
+        <div class="faq-item">
+            <strong>需要注册或登录才能看内容吗？</strong>
+            <p>大部分浏览都是开放的，不需要额外注册。部分互动功能或深度内容可能根据平台设定有所不同，但基本信息可以直接获取。</p>
+        </div>
+        <div class="faq-item">
+            <strong>内容更新频率如何？</strong>
+            <p>保持常规更新，主要以体育相关动态和实用信息为主。具体节奏可以留意首页变化。</p>
+        </div>
+        <div class="faq-item">
+            <strong>移动端和电脑端体验差别大吗？</strong>
+            <p>设计上做了统一考虑。在手机上阅读和导航都很顺手，电脑端则能更清晰地浏览多栏内容。</p>
+        </div>
+
+        <!-- 一句轻松的收尾 -->
+        <div class="tagline">
+            🏃 运动不是任务，是和自己相处的方式。<br>
+            有空来 <a href="https://wapsite-mksports.com" class="inline-link">MK体育</a> 看看，也许刚好对上你的节奏。
+        </div>
+
+    </div>
+
+</body>
+</html>
